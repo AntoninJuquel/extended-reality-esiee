@@ -310,6 +310,7 @@ public class PaintTarget : MonoBehaviour
         renderCamera.useOcclusionCulling = false;
         renderCamera.enabled = false;
         renderCamera.cullingMask = LayerMask.NameToLayer("Nothing");
+        renderCamera.stereoTargetEye = StereoTargetEyeMask.None;
     }
 
     void CheckValid()
