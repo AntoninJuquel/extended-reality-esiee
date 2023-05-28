@@ -215,31 +215,10 @@ public class ClipSlide : MonoBehaviour
         Grabbable ejectedMag = DetachMagazine();
         _lastEjectTime = Time.time;
 
-        StartCoroutine(EjectMagRoutine(ejectedMag));
+        ejectedMag.transform.parent = null;
+        ejectedMag.GetComponent<Rigidbody>().AddForce(-ejectedMag.transform.up * ejectForce, ForceMode.Impulse);
     }
 
-    private IEnumerator EjectMagRoutine(Grabbable ejectedMag)
-    {
-        if (ejectedMag != null && ejectedMag.GetComponent<Rigidbody>() != null)
-        {
-            Rigidbody ejectRigid = ejectedMag.GetComponent<Rigidbody>();
-
-            ejectedMag.transform.parent = transform;
-
-            if (ejectedMag.transform.localPosition.y > -clipSnapDistance)
-            {
-                ejectedMag.transform.localPosition = new Vector3(0, -0.1f, 0);
-            }
-
-            ejectedMag.transform.parent = null;
-            ejectRigid.AddForce(-ejectedMag.transform.up * ejectForce, ForceMode.VelocityChange);
-
-            yield return new WaitForFixedUpdate();
-            ejectedMag.transform.parent = null;
-        }
-
-        yield return null;
-    }
 
     public void OnGrabClipArea(Grabber grabbedBy)
     {

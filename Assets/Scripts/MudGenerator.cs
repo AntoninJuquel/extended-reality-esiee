@@ -3,32 +3,40 @@ using UnityEngine;
 
 public class MudGenerator : MonoBehaviour
 {
+    [SerializeField] private Transform[] sources;
     [SerializeField] private Brush brush;
-    private Mesh _mesh;
-    private PaintTarget _paintTarget;
-
-    private void Awake()
-    {
-        _paintTarget = GetComponent<PaintTarget>();
-    }
 
     private IEnumerator Start()
     {
-        if (!_paintTarget) yield break;
-
         yield return new WaitForEndOfFrame();
         Paint();
     }
 
-    [ContextMenu("Paint")]
     private void Paint()
     {
-        _mesh = _paintTarget.GetComponent<MeshFilter>().mesh;
-        for (var i = 0; i < _mesh.vertices.Length; i++)
+        foreach (var source in sources)
         {
-            var point = _mesh.vertices[i] + _paintTarget.transform.position;
-            var normal = _mesh.normals[i];
-            PaintTarget.PaintObject(_paintTarget, point, normal, brush);
+            var ray = new Ray(source.position, source.forward);
+            PaintTarget.PaintRay(ray, brush);
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (sources == null)
+        {
+            return;
+        }
+
+        foreach (var source in sources)
+        {
+            if (source == null)
+            {
+                continue;
+            }
+
+            Gizmos.color = Color.red;
+            Gizmos.DrawRay(source.position, source.forward);
         }
     }
 }

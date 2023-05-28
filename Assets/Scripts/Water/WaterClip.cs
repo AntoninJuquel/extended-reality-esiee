@@ -47,10 +47,12 @@ public class WaterClip : MonoBehaviour
     public void ClipIn()
     {
         onClippedIn?.Invoke();
+        GetComponent<Rigidbody>().isKinematic = true;
     }
 
     public void ClipOut()
     {
         onClippedOut?.Invoke();
+        GetComponent<Rigidbody>().isKinematic = false;
     }
 }
