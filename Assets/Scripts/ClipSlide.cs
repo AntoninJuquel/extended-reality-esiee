@@ -30,7 +30,6 @@ public class ClipSlide : MonoBehaviour
 
     private bool _magazineInPlace = false;
 
-    // Lock in place for physics
     private bool _lockedInPlace = false;
     private GrabberArea _grabClipArea;
     private float _lastEjectTime;
@@ -39,7 +38,6 @@ public class ClipSlide : MonoBehaviour
     {
         _grabClipArea = GetComponentInChildren<GrabberArea>();
 
-        // Check to see if we started with a loaded magazine
         if (_heldMagazine != null)
         {
             AttachGrabbableMagazine(_heldMagazine, _heldMagazine.GetComponent<Collider>());
@@ -48,15 +46,12 @@ public class ClipSlide : MonoBehaviour
 
     private void LateUpdate()
     {
-        // Are we trying to grab the clip from the weapon
         CheckGrabClipInput();
 
-        // There is a magazine inside the slide. Position it properly
         if (_heldMagazine != null)
         {
             _heldMagazine.transform.parent = transform;
 
-            // Lock in place immediately
             if (_lockedInPlace)
             {
                 _heldMagazine.transform.localPosition = Vector3.zero;
@@ -66,10 +61,8 @@ public class ClipSlide : MonoBehaviour
 
             Vector3 localPos = _heldMagazine.transform.localPosition;
 
-            // Make sure magazine is aligned with MagazineSlide
             _heldMagazine.transform.localEulerAngles = Vector3.zero;
 
-            // Only allow Y translation. Don't allow to go up and through clip area
             float localY = localPos.y;
             if (localY > 0)
             {
@@ -82,22 +75,18 @@ public class ClipSlide : MonoBehaviour
 
             bool clipRecentlyGrabbed = Time.time - _heldMagazine.LastGrabTime < 1f;
 
-            // Snap Magazine In Place
             if (_magazineDistance < clipSnapDistance)
             {
-                // Snap in place
                 if (!_magazineInPlace && !RecentlyEjected() && !clipRecentlyGrabbed)
                 {
                     AttachMagazine();
                 }
 
-                // Make sure magazine stays in place if not being grabbed
                 if (!_heldMagazine.BeingHeld)
                 {
                     MoveMagazine(Vector3.zero);
                 }
             }
-            // Stop aligning clip with slide if we exceed this distance
             else if (_magazineDistance >= clipUnsnapDistance && !RecentlyEjected())
             {
                 DetachMagazine();
@@ -117,13 +106,11 @@ public class ClipSlide : MonoBehaviour
 
     public void CheckGrabClipInput()
     {
-        // No need to check for grabbing a clip out if none exists
         if (_heldMagazine == null || _grabClipArea == null)
         {
             return;
         }
 
-        // Don't grab clip if the weapon isn't being held
         if (attachedWeapon != null && !attachedWeapon.BeingHeld)
         {
             return;
@@ -134,7 +121,6 @@ public class ClipSlide : MonoBehaviour
         {
             if (nearestGrabber.HandSide == ControllerHand.Left && InputBridge.Instance.LeftGripDown)
             {
-                // grab clip
                 OnGrabClipArea(nearestGrabber);
             }
             else if (nearestGrabber.HandSide == ControllerHand.Right && InputBridge.Instance.RightGripDown)
@@ -146,20 +132,16 @@ public class ClipSlide : MonoBehaviour
 
     private void AttachMagazine()
     {
-        // Drop Item
         var grabber = _heldMagazine.GetPrimaryGrabber();
         _heldMagazine.DropItem(grabber, false, false);
 
-        // Play Sound
         if (clipAttachSound && Time.timeSinceLevelLoad > 0.1f)
         {
             VRUtils.Instance.PlaySpatialClipAt(clipAttachSound, transform.position, 1f);
         }
 
-        // Move to desired location before locking in place
         MoveMagazine(Vector3.zero);
 
-        // Add fixed joint to make sure physics work properly
         if (transform.parent != null)
         {
             Rigidbody parentRb = transform.parent.GetComponent<Rigidbody>();
@@ -171,12 +153,9 @@ public class ClipSlide : MonoBehaviour
                 fj.connectedBody = parentRb;
             }
 
-            // If attached to a Raycast weapon, let it know we attached something
             onAttachMagazine?.Invoke(_heldMagazine.gameObject);
         }
 
-        // Don't let anything try to grab the magazine while it's within the weapon
-        // We will use a grabbable proxy to grab the clip back out instead
         _heldMagazine.enabled = false;
 
         _lockedInPlace = true;
@@ -198,7 +177,6 @@ public class ClipSlide : MonoBehaviour
 
         _heldMagazine.transform.parent = null;
 
-        // Remove fixed joint
         if (transform.parent != null)
         {
             Rigidbody parentRb = transform.parent.GetComponent<Rigidbody>();
@@ -213,17 +191,14 @@ public class ClipSlide : MonoBehaviour
             }
         }
 
-        // Reset Collider
         if (_heldCollider != null)
         {
             _heldCollider.enabled = true;
             _heldCollider = null;
         }
 
-        // Let wep know we detached something
         onDetachMagazine?.Invoke(_heldMagazine.gameObject);
 
-        // Can be grabbed again
         _heldMagazine.enabled = true;
         _magazineInPlace = false;
         _lockedInPlace = false;
@@ -249,9 +224,6 @@ public class ClipSlide : MonoBehaviour
         {
             Rigidbody ejectRigid = ejectedMag.GetComponent<Rigidbody>();
 
-            // Wait before ejecting
-
-            // Move clip down before we eject it
             ejectedMag.transform.parent = transform;
 
             if (ejectedMag.transform.localPosition.y > -clipSnapDistance)
@@ -259,7 +231,6 @@ public class ClipSlide : MonoBehaviour
                 ejectedMag.transform.localPosition = new Vector3(0, -0.1f, 0);
             }
 
-            // Eject with physics force
             ejectedMag.transform.parent = null;
             ejectRigid.AddForce(-ejectedMag.transform.up * ejectForce, ForceMode.VelocityChange);
 
@@ -270,21 +241,16 @@ public class ClipSlide : MonoBehaviour
         yield return null;
     }
 
-    // Pull out magazine from clip area
     public void OnGrabClipArea(Grabber grabbedBy)
     {
         if (_heldMagazine != null)
         {
-            // Store reference so we can eject the clip first
             Grabbable temp = _heldMagazine;
 
-            // Make sure the magazine can be gripped
             _heldMagazine.enabled = true;
 
-            // Eject clip into hand
             DetachMagazine();
 
-            // Now transfer grab to the grabber
             temp.enabled = true;
 
             grabbedBy.GrabGrabbable(temp);
@@ -298,7 +264,6 @@ public class ClipSlide : MonoBehaviour
 
         _heldCollider = magCollider;
 
-        // Disable the collider while we're sliding it in to the weapon
         if (_heldCollider != null)
         {
             _heldCollider.enabled = false;
