@@ -214,7 +214,7 @@ MonoBehaviour:
   ParentHandModel: 1
   SnapHandModel: 1
   CanBeDropped: 1
-  CanBeSnappedToSnapZone: 1
+  CanBeSnappedToSnapZone: 0
   ForceDisableKinematicOnDrop: 0
   InstantMovement: 0
   MakeChildCollidersGrabbable: 0
@@ -226,7 +226,7 @@ MonoBehaviour:
   TwoHandedPostionLerpAmount: 0.5
   TwoHandedRotation: 1
   TwoHandedRotationLerpAmount: 0.5
-  TwoHandedDropBehavior: 0
+  TwoHandedDropBehavior: 1
   TwoHandedLookVector: 0
   SecondHandLookSpeed: 40
   SecondaryGrabbable: {fileID: 0}

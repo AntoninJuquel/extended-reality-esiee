@@ -1208,8 +1208,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aabcfcc56f7a4a84f889201f4cd6dd2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAmount: 1
-  waterAmount: 1
+  maxAmount: 10
+  waterAmount: 10
   waterLevelImages:
   - {fileID: 46269980470220366}
   - {fileID: 46269979264981243}

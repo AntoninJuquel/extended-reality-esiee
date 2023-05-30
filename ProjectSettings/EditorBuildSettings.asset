@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/BNG Framework/Scenes/XR Demo.unity
     guid: a1360534006d3f845bc79b46b93cfec5
   - enabled: 0
@@ -24,8 +24,8 @@ EditorBuildSettings:
     path: Assets/BNG Framework/Scenes/Quest Demo.unity
     guid: eac0312c32df12949a47d07747a9d1cd
   - enabled: 1
-    path: Assets/Level/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Level/Scenes/Level.unity
+    guid: 2b336f37ee4562144bae3264c922880a
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 295427af42e631a40829c6ce97a32ffe,
       type: 2}
