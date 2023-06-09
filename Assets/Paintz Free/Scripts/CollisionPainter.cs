@@ -5,7 +5,7 @@ public class CollisionPainter : MonoBehaviour
 {
     public Brush brush;
     public bool RandomChannel = false;
-    public UnityEvent onPaint;
+    public UnityEvent<Collision> onPaint;
     private void Start()
     {
     }
@@ -29,7 +29,7 @@ public class CollisionPainter : MonoBehaviour
             {
                 if (RandomChannel) brush.splatChannel = Random.Range(0, 4);
                 PaintTarget.PaintObject(paintTarget, contact.point, contact.normal, brush);
-                onPaint?.Invoke();
+                onPaint?.Invoke(collision);
             }
         }
     }

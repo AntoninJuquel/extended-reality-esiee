@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2693296965905463319}
   - component: {fileID: 2693296965905463316}
   - component: {fileID: 2693296965905463317}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: entity_button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 2693296966198103910}
   - component: {fileID: 2693296966198103911}
   - component: {fileID: 2693296966198103908}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: InnerButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -583,7 +583,7 @@ GameObject:
   - component: {fileID: 2693296966323806850}
   - component: {fileID: 2693296966323806851}
   - component: {fileID: 2693296966323806848}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -678,7 +678,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2693296966796350289}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ButtonHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -712,7 +712,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2693296967375617739}
   - component: {fileID: 2693296967375617738}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ButtonJointHelper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -832,6 +832,11 @@ PrefabInstance:
       propertyPath: m_FontData.m_Alignment
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4088779761337023189, guid: 1f75a4a1ec4271442a6c51de842cadf0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4088779762850046594, guid: 1f75a4a1ec4271442a6c51de842cadf0,
         type: 3}
       propertyPath: m_DynamicPixelsPerUnit
@@ -846,6 +851,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UICanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088779762850046648, guid: 1f75a4a1ec4271442a6c51de842cadf0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4088779762850046649, guid: 1f75a4a1ec4271442a6c51de842cadf0,
         type: 3}

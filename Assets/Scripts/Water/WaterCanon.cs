@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using BNG;
@@ -7,6 +6,7 @@ using UnityEngine.UI;
 
 public class WaterCanon : GrabbableEvents
 {
+    [SerializeField] private AudioSource audioSource;
     [SerializeField] private ParticleSystem waterParticles;
     [SerializeField] private float waterForce = 10f, drainRate = 0.1f, triggerThreshold = 0.2f;
     [SerializeField] private Image waterLevelImage;
@@ -67,6 +67,14 @@ public class WaterCanon : GrabbableEvents
                 }
             }
 
+            if (audioSource)
+            {
+                if (!audioSource.isPlaying)
+                {
+                    audioSource.Play();
+                }
+            }
+
             if (input && thisGrabber)
             {
                 input.VibrateController(0.1f, 0.5f, 0.2f, thisGrabber.HandSide);
@@ -83,6 +91,10 @@ public class WaterCanon : GrabbableEvents
         if (waterParticles && waterParticles.isPlaying)
         {
             waterParticles.Stop();
+        }
+        if(audioSource && audioSource.isPlaying)
+        {
+            audioSource.Stop();
         }
     }
 

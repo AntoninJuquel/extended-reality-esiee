@@ -15,7 +15,9 @@ GameObject:
   - component: {fileID: 4908218365317644851}
   - component: {fileID: 4908218365317644860}
   - component: {fileID: 4908218365317644861}
-  m_Layer: 0
+  - component: {fileID: 7895783901974817082}
+  - component: {fileID: 891838209129630784}
+  m_Layer: 10
   m_Name: entity_sponge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,14 +31,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8717127887774406446}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: 3.8974342, y: 0.962, z: 0.636827}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &4908218365317644849
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -212,4 +214,62 @@ MonoBehaviour:
   RandomChannel: 0
   onPaint:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7895783901974817082}
+        m_TargetAssemblyTypeName: BNG.CollisionSound, Assembly-CSharp
+        m_MethodName: HandleCollision
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7895783901974817082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8717127887774406446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c575c9380b9d239499fadf100ef2800b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionAudio: {fileID: 8300000, guid: 639e25a103866394a9062efee95917cb, type: 3}
+  CollisionAudios:
+  - {fileID: 8300000, guid: 639e25a103866394a9062efee95917cb, type: 3}
+  - {fileID: 8300000, guid: 6c9b165e021eb5b419183c4733c121ab, type: 3}
+  - {fileID: 8300000, guid: 95f9aef8348ee924585a9526c1cff18a, type: 3}
+  - {fileID: 8300000, guid: 02697decf8e2bb04d8f6e67bdaf7ab0e, type: 3}
+  - {fileID: 8300000, guid: be2b2b2064c5cf643958880620b116b1, type: 3}
+  MinimumVolume: 1
+  MaximumVolume: 1
+  RecentlyPlayedSound: 0
+  LastRelativeVelocity: 0
+  playCooldown: 0.2
+  playOnCollisionEnter: 1
+  playOnCollisionStay: 0
+  minVelocity: 0
+--- !u!114 &891838209129630784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8717127887774406446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b90ed01ac5d94e9468b242b4c38496a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HapticsOnValidPickup: 1
+  HapticsOnValidRemotePickup: 1
+  HapticsOnCollision: 1
+  HapticsOnGrab: 1
+  VibrateFrequency: 0.3
+  VibrateAmplitude: 0.1
+  VibrateDuration: 0.1

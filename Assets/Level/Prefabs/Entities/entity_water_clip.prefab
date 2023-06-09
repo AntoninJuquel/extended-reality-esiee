@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 517592007317807936}
   - component: {fileID: 3495075496378330341}
   - component: {fileID: 1686026231102674991}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: clipA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 4866165806477533890}
   - component: {fileID: 4714495387401657872}
   - component: {fileID: 2858094359809000428}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RingHelper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -496,7 +496,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5253648765311635225}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GrabTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -529,7 +529,7 @@ GameObject:
   - component: {fileID: 8621152803366948939}
   - component: {fileID: 8621152803366948933}
   - component: {fileID: 46269981087727201}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -609,7 +609,7 @@ GameObject:
   - component: {fileID: 8621152803505838472}
   - component: {fileID: 8621152803505838474}
   - component: {fileID: 8621152803505838473}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LineAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -754,7 +754,7 @@ GameObject:
   - component: {fileID: 8621152803696951463}
   - component: {fileID: 8621152803696951457}
   - component: {fileID: 46269981087727202}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -829,7 +829,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8621152803700155481}
   - component: {fileID: 8621152803700155482}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ToolTip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -880,7 +880,7 @@ GameObject:
   - component: {fileID: 8621152804140340567}
   - component: {fileID: 8621152804140340565}
   - component: {fileID: 46269981087727212}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: TextCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -974,7 +974,7 @@ GameObject:
   - component: {fileID: 8621152804413082457}
   - component: {fileID: 8621152804413082459}
   - component: {fileID: 46269981087727203}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class WaterFiller : MonoBehaviour
 {
+    [SerializeField] private AudioSource audioSource;
     [SerializeField] private ParticleSystem waterParticleSystem;
     [SerializeField] private float fillRate, maxFillRate = 1f;
     private HashSet<WaterClip> _waterClips = new HashSet<WaterClip>();
@@ -31,13 +32,27 @@ public class WaterFiller : MonoBehaviour
 
         if (waterParticleSystem)
         {
-            if (percent > 0 && !waterParticleSystem.isPlaying)
+            if (percent > 0)
             {
-                waterParticleSystem.Play();
+                if (waterParticleSystem && !waterParticleSystem.isPlaying)
+                {
+                    waterParticleSystem.Play();
+                }
+                if (audioSource && !audioSource.isPlaying)
+                {
+                    audioSource.Play();
+                }
             }
-            else if (percent <= 0 && waterParticleSystem.isPlaying)
+            else if (percent <= 0)
             {
-                waterParticleSystem.Stop();
+                if (waterParticleSystem && waterParticleSystem.isPlaying)
+                {
+                    waterParticleSystem.Stop();
+                }
+                if (audioSource && audioSource.isPlaying)
+                {
+                    audioSource.Stop();
+                }
             }
         }
     }

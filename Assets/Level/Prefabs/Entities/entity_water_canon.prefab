@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 3332097016451482682}
   - component: {fileID: 1842578079721311135}
   - component: {fileID: 4501013892283318101}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: blasterG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +369,7 @@ GameObject:
   - component: {fileID: 3244413350247251697}
   - component: {fileID: 3244413350247251711}
   - component: {fileID: 3244413350247251696}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -482,6 +482,7 @@ GameObject:
   - component: {fileID: 5670696163106134504}
   - component: {fileID: 5670696163106134507}
   - component: {fileID: 5670696163106134487}
+  - component: {fileID: 6798523362885828334}
   m_Layer: 10
   m_Name: entity_water_canon
   m_TagString: Untagged
@@ -561,11 +562,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1e1e0acc404bbd241a7722f4cf3df741, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 769ef3e55f3907649b5b042121fec187, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 1
   SpatializePostEffects: 0
@@ -784,6 +785,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6798523362885828334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5670696163106134035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804203cdc71657347bc071dfeba41047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalPositionOffset: {x: 0, y: 0, z: 0}
+  LocalRotationOffset: {x: 90, y: 0, z: 0}
 --- !u!1 &5670696163352402307
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,7 +811,7 @@ GameObject:
   - component: {fileID: 5670696163352402311}
   - component: {fileID: 3632167545310565012}
   - component: {fileID: 5670696163809055468}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -898,10 +913,55 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5670696163106134032}
     m_Modifications:
+    - target: {fileID: 1610909020073882484, guid: 944c6d5cba6ff1f489c46e5e008cb43b,
+        type: 3}
+      propertyPath: CollisionModule.radiusScale
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610909020073882484, guid: 944c6d5cba6ff1f489c46e5e008cb43b,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610909020073882484, guid: 944c6d5cba6ff1f489c46e5e008cb43b,
+        type: 3}
+      propertyPath: TrailModule.colorOverTrail.maxColor.a
+      value: 0.6745098
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610909020073882484, guid: 944c6d5cba6ff1f489c46e5e008cb43b,
+        type: 3}
+      propertyPath: TrailModule.colorOverTrail.maxColor.g
+      value: 0.5411765
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610909020073882484, guid: 944c6d5cba6ff1f489c46e5e008cb43b,
+        type: 3}
+      propertyPath: TrailModule.colorOverLifetime.maxColor.a
+      value: 0.6745098
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610909020073882484, guid: 944c6d5cba6ff1f489c46e5e008cb43b,
+        type: 3}
+      propertyPath: TrailModule.colorOverLifetime.maxColor.g
+      value: 0.5407071
+      objectReference: {fileID: 0}
+    - target: {fileID: 1808042314413042398, guid: 944c6d5cba6ff1f489c46e5e008cb43b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4941599531230506786, guid: 944c6d5cba6ff1f489c46e5e008cb43b,
+        type: 3}
+      propertyPath: brush.splatScale
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5777387125477512921, guid: 944c6d5cba6ff1f489c46e5e008cb43b,
         type: 3}
       propertyPath: m_Name
       value: ps_water
+      objectReference: {fileID: 0}
+    - target: {fileID: 5777387125477512921, guid: 944c6d5cba6ff1f489c46e5e008cb43b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8845448585974294722, guid: 944c6d5cba6ff1f489c46e5e008cb43b,
         type: 3}
