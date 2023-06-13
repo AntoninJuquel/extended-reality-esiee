@@ -1,0 +1,44 @@
+I. Instructions de l'application
+
+1. Objectifs fonctionnels
+
+L'objectif de l'application "Super Wash" est de proposer une expérience immersive de nettoyage dans un environnement virtuel en réalité virtuelle.
+
+2. Capacités (ACV) de l' utilisateur
+
+- Nettoyer des objets avec une éponge
+- Utiliser un karcher pour nettoyer des surfaces
+- Passer le balai
+- Ramasser des détritus
+
+3. Les contrôles
+
+- Joystick gauche : déplacement continue
+- Joystick droit : pivoter
+- Gachette : tirer au karchère
+- Grip : ramasser les objets
+- Boutton menu gauche : recomencer
+
+II. Remarques
+
+- Tous les tiroirs ne sont pas forcement ouvrables
+- La physique des joints sont parfois approximatifs
+- Nous pourrions ajouter plus d'objets/gadgets pour le nettoyage (perche pour attrapper les objets etc...)
+- Il n'y a pas réellement de boucle de gameplay il faudrait en plus du tracking de détritus jetés un tracking du pourcentage nettoyés
+
+III. Roles dans le projet
+
+- HIRUTHAYARAJ Raj Porus
+	- Concéption du niveau
+	- Recherche d'assets
+- ESCAFFRE Robin
+	- Models 3D (conception, recherche et validation)
+	- Construction des prefabs de type décors
+- TADRES Nicolas
+	- Chef de projet
+	- Ecriture des documentations
+	- Testeur
+	- Définition des ACV de l'utilisateur
+- JUQUEL Antonin
+	- Développement VR
+	- Construction des prefabs de type utilitaires/fonctionnels
