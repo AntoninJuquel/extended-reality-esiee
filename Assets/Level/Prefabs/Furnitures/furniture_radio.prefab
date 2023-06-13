@@ -1042,6 +1042,7 @@ GameObject:
   - component: {fileID: 5207046167550857180}
   - component: {fileID: 6305764886216626587}
   - component: {fileID: 6305764886216626584}
+  - component: {fileID: 4871043336513908896}
   m_Layer: 0
   m_Name: furniture_radio
   m_TagString: Untagged
@@ -1221,6 +1222,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4871043336513908896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7739041204572882053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c575c9380b9d239499fadf100ef2800b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionAudio: {fileID: 8300000, guid: 66169591194e7f8479424e3b0136b459, type: 3}
+  CollisionAudios:
+  - {fileID: 8300000, guid: 66169591194e7f8479424e3b0136b459, type: 3}
+  - {fileID: 8300000, guid: 555bf8a4b1aefad40941dd871387373a, type: 3}
+  MinimumVolume: 0.25
+  MaximumVolume: 1
+  RecentlyPlayedSound: 0
+  LastRelativeVelocity: 0
+  playCooldown: 0.1
+  playOnCollisionEnter: 1
+  playOnCollisionStay: 0
+  minVelocity: 0.1
 --- !u!1001 &7469203667512252895
 PrefabInstance:
   m_ObjectHideFlags: 0

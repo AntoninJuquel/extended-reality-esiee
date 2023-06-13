@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace BNG {
-    public class Tooltip : MonoBehaviour {
-
+namespace BNG
+{
+    public class Tooltip : MonoBehaviour
+    {
         /// <summary>
         /// Offset from Object we are providing tip to
         /// </summary>
@@ -28,43 +27,66 @@ namespace BNG {
         public Transform DrawLineTo;
         LineToTransform lineTo;
         Transform lookAt;
-        
-        void Start() {
-            lookAt = Camera.main.transform;
+        Camera mainCamera;
+
+        private void Awake()
+        {
+            mainCamera = Camera.main;
+        }
+
+        void Start()
+        {
+            lookAt = mainCamera.transform;
             lineTo = GetComponentInChildren<LineToTransform>();
 
             childTransform = transform.GetChild(0);
 
-            if (DrawLineTo && lineTo) {
+            if (DrawLineTo && lineTo)
+            {
                 lineTo.ConnectTo = DrawLineTo;
             }
         }
 
-        void Update() {
+        void Update()
+        {
             UpdateTooltipPosition();
         }
 
-        public virtual void UpdateTooltipPosition() {
-            if (lookAt) {
-                transform.LookAt(Camera.main.transform);
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(transform.position, MaxViewDistance);
+        }
+
+        public virtual void UpdateTooltipPosition()
+        {
+            if (lookAt)
+            {
+                transform.LookAt(mainCamera.transform);
             }
-            else if (Camera.main != null) {
-                lookAt = Camera.main.transform;
+            else if (mainCamera != null)
+            {
+                lookAt = mainCamera.transform;
             }
-            else if (Camera.main == null) {
+            else if (mainCamera == null)
+            {
+                mainCamera = Camera.main;
                 return;
             }
 
             transform.parent = DrawLineTo;
             transform.localPosition = TipOffset;
 
-            if (UseWorldYAxis) {
+            if (UseWorldYAxis)
+            {
                 transform.localPosition = new Vector3(transform.localPosition.x, 0, transform.localPosition.z);
                 transform.position += new Vector3(0, TipOffset.y, 0);
             }
 
-            if (childTransform) {
-                childTransform.gameObject.SetActive(Vector3.Distance(transform.position, Camera.main.transform.position) <= MaxViewDistance);
+            if (childTransform)
+            {
+                childTransform.gameObject.SetActive(
+                    Vector3.Distance(transform.position, mainCamera.transform.position) <= MaxViewDistance);
             }
         }
     }

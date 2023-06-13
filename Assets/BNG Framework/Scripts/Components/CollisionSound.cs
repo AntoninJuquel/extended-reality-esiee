@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace BNG {
-
+namespace BNG
+{
     /// <summary>
     /// Plays a Sound Clip OnCollisionEnter
     /// </summary>
-    public class CollisionSound : MonoBehaviour {
-
+    public class CollisionSound : MonoBehaviour
+    {
         public AudioClip CollisionAudio;
-        public AudioClip[] CollisionAudios; 
+        public AudioClip[] CollisionAudios;
         AudioSource audioSource;
         float startTime;
 
@@ -36,10 +36,12 @@ namespace BNG {
         public bool playOnCollisionEnter = true, playOnCollisionStay;
         public float minVelocity = 0.1f;
 
-        void Start() {
+        void Start()
+        {
             audioSource = GetComponent<AudioSource>();
 
-            if(audioSource == null) {
+            if (audioSource == null)
+            {
                 audioSource = gameObject.AddComponent<AudioSource>();
                 audioSource.spatialBlend = 1f;
             }
@@ -48,12 +50,14 @@ namespace BNG {
             col = GetComponent<Collider>();
             if (!col)
             {
-               col = GetComponentInChildren<Collider>();
+                col = GetComponentInChildren<Collider>();
             }
+
             grab = GetComponent<Grabbable>();
         }
 
-        private void OnCollisionEnter(Collision collision) {
+        private void OnCollisionEnter(Collision collision)
+        {
             if (playOnCollisionEnter)
             {
                 HandleCollision(collision);
@@ -107,7 +111,6 @@ namespace BNG {
 
             if (minVelReached && audioValid && !otherColliderPlayedSound && !RecentlyPlayedSound)
             {
-
                 LastRelativeVelocity = colVelocity;
 
                 // Play Shot
@@ -116,7 +119,9 @@ namespace BNG {
                     audioSource.Stop();
                 }
 
-                var selectedClip = CollisionAudios != null && CollisionAudios.Length > 0 ? CollisionAudios[Random.Range(0, CollisionAudios.Length)] : CollisionAudio;
+                var selectedClip = CollisionAudios is { Length: > 0 }
+                    ? CollisionAudios[Random.Range(0, CollisionAudios.Length)]
+                    : CollisionAudio;
 
                 audioSource.clip = selectedClip;
                 audioSource.pitch = Time.timeScale;
@@ -129,7 +134,8 @@ namespace BNG {
             }
         }
 
-        void resetLastPlayedSound() {
+        void resetLastPlayedSound()
+        {
             RecentlyPlayedSound = false;
         }
     }

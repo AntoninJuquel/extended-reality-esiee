@@ -152,7 +152,7 @@ MonoBehaviour:
   ForceDisableKinematicOnDrop: 0
   InstantMovement: 0
   MakeChildCollidersGrabbable: 0
-  handPoseType: 3
+  handPoseType: 2
   SelectedHandPose: {fileID: 0}
   CustomHandPose: 0
   SecondaryGrabBehavior: 0
@@ -246,11 +246,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 95f9aef8348ee924585a9526c1cff18a, type: 3}
   - {fileID: 8300000, guid: 02697decf8e2bb04d8f6e67bdaf7ab0e, type: 3}
   - {fileID: 8300000, guid: be2b2b2064c5cf643958880620b116b1, type: 3}
-  MinimumVolume: 1
-  MaximumVolume: 1
+  MinimumVolume: 0.5
+  MaximumVolume: 0.9
   RecentlyPlayedSound: 0
   LastRelativeVelocity: 0
-  playCooldown: 0.2
+  playCooldown: 0.3
   playOnCollisionEnter: 1
   playOnCollisionStay: 0
   minVelocity: 0
