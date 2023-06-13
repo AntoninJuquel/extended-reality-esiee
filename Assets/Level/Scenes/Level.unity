@@ -1973,7 +1973,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 448556344}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25649,7 +25649,7 @@ GameObject:
   - component: {fileID: 808291713}
   - component: {fileID: 3469287838569238261}
   - component: {fileID: 3469287838569238262}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: furniture_plant_small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25759,7 +25759,7 @@ GameObject:
   - component: {fileID: 1618176036}
   - component: {fileID: 3469287838274024416}
   - component: {fileID: 3469287838274024417}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fryingPan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25948,7 +25948,7 @@ GameObject:
   - component: {fileID: 3469287836662104821}
   - component: {fileID: 3469287836662104823}
   - component: {fileID: 3469287836662104824}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: trash_packaging_pizza_box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50337,6 +50337,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6852704770770565991, guid: 2abc3821647d9d14291b4ef122a117dd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6852704772346110730, guid: 2abc3821647d9d14291b4ef122a117dd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6930274929189183039, guid: 2abc3821647d9d14291b4ef122a117dd,
         type: 3}
       propertyPath: m_RootOrder
@@ -50392,6 +50402,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7469203665634630831, guid: 2abc3821647d9d14291b4ef122a117dd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7469203665822393576, guid: 2abc3821647d9d14291b4ef122a117dd,
         type: 3}
       propertyPath: isOn
@@ -50406,6 +50421,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469203665822393581, guid: 2abc3821647d9d14291b4ef122a117dd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469203665997191011, guid: 2abc3821647d9d14291b4ef122a117dd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469203666275222527, guid: 2abc3821647d9d14291b4ef122a117dd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469203666363232195, guid: 2abc3821647d9d14291b4ef122a117dd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469203666680425621, guid: 2abc3821647d9d14291b4ef122a117dd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469203666911898940, guid: 2abc3821647d9d14291b4ef122a117dd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469203666999154262, guid: 2abc3821647d9d14291b4ef122a117dd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7739041204572882053, guid: 2abc3821647d9d14291b4ef122a117dd,
         type: 3}
@@ -50430,7 +50480,7 @@ GameObject:
   - component: {fileID: 7471891950916568799}
   - component: {fileID: 7471891950916568801}
   - component: {fileID: 7471891950916568802}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: lid
   m_TagString: Untagged
   m_Icon: {fileID: 0}

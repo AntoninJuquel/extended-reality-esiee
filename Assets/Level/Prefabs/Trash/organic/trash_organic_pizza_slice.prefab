@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8564987007851961646}
   - component: {fileID: 8564987007851961645}
   - component: {fileID: 8564987007851961644}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: trash_organic_pizza_slice
   m_TagString: Untagged
   m_Icon: {fileID: 0}

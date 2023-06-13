@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4062918498887434546}
   - component: {fileID: 4062918498887434509}
   - component: {fileID: 4062918498887434508}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: trash_packaging_fries_empty
   m_TagString: Untagged
   m_Icon: {fileID: 0}

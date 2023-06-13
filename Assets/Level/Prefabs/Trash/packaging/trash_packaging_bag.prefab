@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 692403391980568996}
   - component: {fileID: 692403391980568997}
   - component: {fileID: 692403391980569002}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: trash_packaging_bag
   m_TagString: Untagged
   m_Icon: {fileID: 0}

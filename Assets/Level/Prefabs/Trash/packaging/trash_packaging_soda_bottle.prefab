@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 803839966956212160}
   - component: {fileID: 803839966956212163}
   - component: {fileID: 803839966956212162}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: trash_packaging_soda_bottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
